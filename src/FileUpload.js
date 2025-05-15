@@ -69,11 +69,11 @@ function FileUpload() {
 
             {apiResponseList && apiResponseList.length > 0 && (
                 <div className="response-list">
-                    <h2>API Cevapları:</h2>
+                    <h2>Model Tahminleri : </h2>
                     <ul>
                         {apiResponseList.map((item, index) => (
                             <li key={index}>
-                                <strong>İçerik:</strong> {item.icerik}, <strong>Yazar:</strong> {item.yazar}
+                                <strong>Yazar:</strong> {item.predicted_author} ,<br></br> <strong>İçerik:</strong> {item.predicted_text}
                             </li>
                         ))}
                     </ul>
