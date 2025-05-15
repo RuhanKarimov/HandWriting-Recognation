@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import axios from 'axios'; // axios kütüphanesini import et
 import './FileUpload.css';
 
 function FileUpload() {
     const [selectedFile, setSelectedFile] = useState(null);
-    const [apiResponseList, setApiResponseList] = useState(null); // Liste şeklinde cevap için state
+    const [apiResponseList, setApiResponseList] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
@@ -11,7 +12,7 @@ function FileUpload() {
         const file = event.target.files[0];
         if (file) {
             setSelectedFile(file);
-            setApiResponseList(null); // Yeni dosya seçildiğinde önceki listeyi temizle
+            setApiResponseList(null);
             setError(null);
         } else {
             setSelectedFile(null);
@@ -32,23 +33,18 @@ function FileUpload() {
         formData.append('image', selectedFile);
 
         try {
-            const response = await fetch('http://localhost:5000/upload', {
-                method: 'POST',
-                body: formData,
+            const response = await axios.post('http://localhost:5002/predict', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data', // axios otomatik olarak ayarlamaz
+                },
             });
 
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(data.error || 'Dosya yüklenirken bir hata oluştu.');
-            }
-
-            setApiResponseList(data); // API cevabını (liste) state'e kaydet
-            console.log('API Response List:', data);
+            setApiResponseList(response.data); // axios response'unun datası doğrudan JSON'dır
+            console.log('API Response List (axios):', response.data);
 
         } catch (err) {
             setError(`Yükleme hatası: ${err.message}`);
-            console.error('Upload Error:', err);
+            console.error('Upload Error (axios):', err);
         } finally {
             setLoading(false);
         }
