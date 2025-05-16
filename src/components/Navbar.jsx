@@ -50,20 +50,10 @@ export default function Navbar() {
                 className={`custom-menu ${isOpen ? 'show' : ''}`}
             >
                 <ul className="nav flex-column p-3">
+
                     <li className="nav-item">
                         <NavLink
                             to="/"
-                            end
-                            className={({isActive}) =>
-                                `nav-link text-white ${isActive ? 'active-link' : ''}`
-                            }
-                        >
-                            <i className="bi bi-house me-2"></i>Ana Sayfa
-                        </NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink
-                            to="/upload"
                             className={({isActive}) =>
                                 `nav-link text-white ${isActive ? 'active-link' : ''}`
                             }

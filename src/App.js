@@ -13,8 +13,7 @@ function App() {
 
             <main className="flex-fill">
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/upload" element={<Upload />} />
+                    <Route index element={<Upload />} />
                     <Route path="/result" element={<Result />} />
                     <Route path="/about" element={<About />} />
                     <Route path="*" element={<div className="container mt-5">404 - Sayfa bulunamadı</div>} />
