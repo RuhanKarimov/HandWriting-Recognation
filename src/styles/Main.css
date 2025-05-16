@@ -1,0 +1,12 @@
+body {
+    background: #f8f9fa;
+    font-family: "Segoe UI", sans-serif;
+}
+
+h2, h3 {
+    color: #333;
+}
+.nav-link.active {
+    font-weight: bold;
+    color: #ffc107 !important; /* sarımsı */
+}
