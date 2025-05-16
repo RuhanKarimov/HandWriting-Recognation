@@ -9,9 +9,18 @@ function groupConsecutiveByAuthor(entries) {
             currentGroup = {
                 author: entry.predicted_author,
                 texts: [entry.predicted_text]
+                // texts: [{
+                //     text: entry.predicted_text,
+                //     line: entry.line_number
+                // }]
             };
         } else {
             currentGroup.texts.push(entry.predicted_text);
+
+            // currentGroup.texts.push({
+            //     text: entry.predicted_text,
+            //     line: entry.line_number
+            // });
         }
     }
 
@@ -65,6 +74,11 @@ export default function Result() {
                                             {group.texts.map((line, j) => (
                                                 <li className="list-group-item" key={j}>{line}</li>
                                             ))}
+                                            {/*{group.texts.map((lineObj, j) => (*/}
+                                            {/*    <li className="list-group-item" key={j}>*/}
+                                            {/*        <strong>Satır {lineObj.line}:</strong> {lineObj.text}*/}
+                                            {/*    </li>*/}
+                                            {/*))}*/}
                                         </ul>
                                     </div>
                                 ))}

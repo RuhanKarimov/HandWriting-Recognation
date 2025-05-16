@@ -109,6 +109,7 @@ function Upload() {
                                 <li key={index} className="list-group-item">
                                     <strong>Yazar:</strong> {item.predicted_author} <br />
                                     <strong>İçerik:</strong> {item.predicted_text}
+                                    {/*<strong>Satır No:</strong> {item.line_number}*/}
                                 </li>
                             ))}
                         </ul>
