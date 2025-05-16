@@ -1,3 +1,6 @@
+import '../styles/Result.css'; // Yol senin yapına göre olabilir
+
+
 import { useEffect, useState } from "react";
 function groupConsecutiveByAuthor(entries) {
     const groups = [];
@@ -28,13 +31,25 @@ function groupConsecutiveByAuthor(entries) {
     return groups;
 }
 
+
 export default function Result() {
+
     const [results, setResults] = useState([]);
+    const [visibleImages, setVisibleImages] = useState({});
+
+    const toggleImageVisibility = (timestamp) => {
+        setVisibleImages((prev) => ({
+            ...prev,
+            [timestamp]: !prev[timestamp],
+        }));
+    };
+
     const handleDelete = (timestampToDelete) => {
         const updated = results.filter(entry => entry.timestamp !== timestampToDelete);
         setResults(updated);
         localStorage.setItem("results", JSON.stringify(updated));
     };
+
 
     useEffect(() => {
         const saved = JSON.parse(localStorage.getItem("results")) || [];
@@ -49,17 +64,43 @@ export default function Result() {
                 <p>Henüz bir sonuç yüklenmedi.</p>
             ) : (
                 results.map((entry, index) => (
+
                     <div key={index} className="card mb-4 shadow-sm position-relative">
                         <div className="card-body">
                             <div className="d-flex justify-content-between align-items-center">
                                 <h5 className="card-title mb-0">{entry.fileName}</h5>
-                                <button
-                                    className="btn btn-sm btn-danger"
-                                    onClick={() => handleDelete(entry.timestamp)}
-                                >
-                                    🗑️ Sil
-                                </button>
+
+                                <div className="d-flex gap-2">
+                                    {entry.imageData && (
+                                        <button
+                                            className="btn btn-sm btn-outline-secondary fade-button"
+                                            onClick={() => toggleImageVisibility(entry.timestamp)}
+                                        >
+                                            <span className="fade-button-text">
+                                            {visibleImages[entry.timestamp] ? "Gizle" : "Görseli Göster"}
+                                            </span>
+                                        </button>
+                                    )}
+                                    <button
+                                        className="btn btn-sm btn-danger"
+                                        onClick={() => handleDelete(entry.timestamp)}
+                                    >
+                                        🗑️ Sil
+                                    </button>
+                                </div>
                             </div>
+                            <div
+                                className={`fade-image ${visibleImages[entry.timestamp] ? 'show' : ''} mb-3 mt-3`}
+                            >
+                                <img
+                                    src={entry.imageData}
+                                    alt={entry.fileName}
+                                    className="img-fluid rounded"
+                                    style={{ objectFit: "contain", width: "100%" }}
+                                />
+                            </div>
+
+
                             <small className="text-muted">
                                 {new Date(entry.timestamp).toLocaleString()}
                             </small>
@@ -85,8 +126,8 @@ export default function Result() {
                             </div>
                         </div>
                     </div>
-
                 ))
+
             )}
         </div>
     );

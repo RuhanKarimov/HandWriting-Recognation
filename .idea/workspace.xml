@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39e39a5f-0b6d-46d1-a9ba-7f497ff9d5fc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/styles/Result.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Result.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Result.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Upload.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Upload.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Navbar.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,26 +27,26 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "RuhanKarimov"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;RuhanKarimov&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/beratavseren/HandWriting-Recognation.git",
-    "accountId": "318ff460-1c94-41e8-b261-3cc7b91d1d36"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/beratavseren/HandWriting-Recognation.git&quot;,
+    &quot;accountId&quot;: &quot;318ff460-1c94-41e8-b261-3cc7b91d1d36&quot;
   }
-}]]></component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 0
-}]]></component>
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2x9aszXcSNayKdAbX3JLLjCDHGn" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -68,6 +70,7 @@
     "nodejs_interpreter_path": "C:/Users/ruhan/AppData/Roaming/JetBrains/IntelliJIdea2024.3/node/versions/22.15.1/node",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.general",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -94,7 +97,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1747352955268</updated>
-      <workItem from="1747352957336" duration="11937000" />
+      <workItem from="1747352957336" duration="12116000" />
+      <workItem from="1747367004569" duration="2023000" />
     </task>
     <servers />
   </component>

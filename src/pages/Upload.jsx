@@ -22,12 +22,19 @@ function Upload() {
         }
     };
 
+    const toBase64 = file => new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+    });
     const handleUpload = async () => {
         if (!selectedFile) {
             setToastMessage("Lütfen bir dosya seçin!");
             setShowToast(true);
             return;
         }
+
 
         setLoading(true);
         setApiResponseList(null);
@@ -37,6 +44,7 @@ function Upload() {
         formData.append('image', selectedFile);
 
         try {
+            const imageBase64 = await toBase64(selectedFile);
             const response = await axios.post('http://localhost:5000/predict', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
@@ -45,6 +53,7 @@ function Upload() {
 
             const newResult = {
                 fileName: selectedFile.name,
+                imageData: imageBase64,
                 result: response.data,
                 timestamp: new Date().toISOString(),
             };

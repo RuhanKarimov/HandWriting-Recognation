@@ -19,11 +19,23 @@
     transform: translateY(0);
     pointer-events: auto;
 }
-.active-link {
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffc107 !important;
     font-weight: bold;
-    color: #ffc107 !important; /* Sarımsı */
     border-left: 3px solid #ffc107;
-    background-color: rgba(255, 193, 7, 0.1);
-    padding-left: 10px;
     border-radius: 4px;
+}
+
+.active-link {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #ffc107 !important;
+    font-weight: bold;
+    padding-left: 10px;
+    border-left: 3px solid #ffc107;
+    border-radius: 4px;
+}
+.nav-link {
+    transition: all 0.3s ease;
 }
