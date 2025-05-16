@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function About() {
     return (
-        <div className="container mt-5">
+        <div className="container mt-5" style={{ paddingTop: '6vh' }}>
             <h2>Hakkımızda</h2>
             <p>
                 Digital Reading, el yazısı analizine dayalı bir kimlik tespit sistemidir.

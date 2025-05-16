@@ -51,26 +51,48 @@ export default function Navbar() {
             >
                 <ul className="nav flex-column p-3">
                     <li className="nav-item">
-                        <NavLink className="nav-link text-white" to="/">
+                        <NavLink
+                            to="/"
+                            end
+                            className={({isActive}) =>
+                                `nav-link text-white ${isActive ? 'active-link' : ''}`
+                            }
+                        >
                             <i className="bi bi-house me-2"></i>Ana Sayfa
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link text-white" to="/upload">
+                        <NavLink
+                            to="/upload"
+                            className={({isActive}) =>
+                                `nav-link text-white ${isActive ? 'active-link' : ''}`
+                            }
+                        >
                             <i className="bi bi-upload me-2"></i>Yükle
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link text-white" to="/result">
+                        <NavLink
+                            to="/result"
+                            className={({isActive}) =>
+                                `nav-link text-white ${isActive ? 'active-link' : ''}`
+                            }
+                        >
                             <i className="bi bi-card-text me-2"></i>Sonuç
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link text-white" to="/about">
+                        <NavLink
+                            to="/about"
+                            className={({isActive}) =>
+                                `nav-link text-white ${isActive ? 'active-link' : ''}`
+                            }
+                        >
                             <i className="bi bi-info-circle me-2"></i>Hakkında
                         </NavLink>
                     </li>
                 </ul>
+
             </div>
         </nav>
     );
